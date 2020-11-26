@@ -2,14 +2,14 @@ FROM registry.access.redhat.com/ubi8/nodejs-12 AS builder
 
 WORKDIR /opt/app-root/src
 
-COPY . .
+COPY ./src src
 
-RUN npm install
-RUN npm run build
+#RUN npm install
+#RUN npm run build
 
-FROM registry.access.redhat.com/ubi8/nodejs-12
+#FROM registry.access.redhat.com/ubi8/nodejs-12
 
-COPY --from=builder /opt/app-root/src src
+#COPY --from=builder /opt/app-root/src/src src
 COPY package.json .
 RUN npm install --production
 
