@@ -215,9 +215,7 @@ pre {
 <body>
 
 <section class='container'>
-          <hgroup>
             <h1>Welcome to your Node.js application on OpenShift</h1>
-          </hgroup>
 
 
         <div class="row">
@@ -291,6 +289,11 @@ $ git push</pre>
                    </p>
                     <div class="code"><h3>DB Connection Info:</h3>
                       <table style='margin-left: 20px'>
+                          <caption>DB Connection Info:</caption>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                          </tr>                          
                           <tr><td>Type:</td><td><%= dbInfo.type %></td></tr>
                           <tr><td>URL:</td><td><%= dbInfo.url %></td></tr>
                       </table>
