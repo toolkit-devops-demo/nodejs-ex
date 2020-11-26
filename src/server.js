@@ -2,12 +2,15 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
-    
+
+const healthRoutes = require('./routes/health-route');
+
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
 app.set('views', './src/views');
-app.use(morgan('combined'))
+app.use(morgan('combined'));
+app.use('/health', healthRoutes);
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',

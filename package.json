@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": ""
+    "test": "",
+    "build": ""
   },
   "repository": {
     "type": "git",
